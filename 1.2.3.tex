@@ -1,3 +1,4 @@
+% \iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -12,67 +13,26 @@
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{gensymb}
+\usepackage{comment}
 \usepackage[breaklinks=true]{hyperref}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{tkz-euclide} 
 \usepackage{listings}
-\usepackage{gvv}
-
-%
-%\usepackage{setspace}
-%\usepackage{gensymb}
-%\doublespacing
-%\singlespacing
-
-
-%\usepackage{amssymb}
-%\usepackage{relsize}
-%\usepackage[cmex10]{amsmath}
-%\usepackage{amsthm}
-%\interdisplaylinepenalty=2500
-%\savesymbol{iint}
-%\usepackage{txfonts}
-%\restoresymbol{TXF}{iint}
-%\usepackage{wasysym}
-%\usepackage{amsthm}
-%\usepackage{iithtlc}
-%\usepackage{mathrsfs}
-%\usepackage{txfonts}
-%\usepackage{stfloats}
-%\usepackage{bm}
-%\usepackage{cite}
-%\usepackage{cases}
-%\usepackage{subfig}
-%\usepackage{xtab}
-%\usepackage{longtable}
-%\usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
-%\usepackage{enumitem}
-%\usepackage{mathtools}
+\usepackage{gvv}  
 \usepackage{tikz}
-\usepackage{circuitikz}
-%\usepackage{verbatim}
-%\usepackage{tfrupee}
-%\usepackage{stmaryrd}
-%\usetkzobj{all}
-%    \usepackage{color}                                            %%
-%    \usepackage{array}                                            %%
-%    \usepackage{longtable}                                        %%
-%    \usepackage{calc}                                             %%
-%    \usepackage{multirow}                                         %%
-%    \usepackage{hhline}                                           %%
-%    \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
-%    \usepackage{lscape}     
-%\usepackage{multicol}
-%\usepackage{chngcntr}
-%\usepackage{enumerate}
+\usepackage{circuitikz} 
+\usepackage{caption}
 
-%\usepackage{wasysym}
-%\documentclass[conference]{IEEEtran}
-%\IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-
+\def\inputGnumericTable{}                                
+\usepackage[latin1]{inputenc}                 
+\usepackage{color}                            
+\usepackage{array}                            
+\usepackage{longtable}                        
+\usepackage{calc}                            
+\usepackage{multirow}                      
+\usepackage{hhline}                           
+\usepackage{ifthen}                          
+\usepackage{lscape}
+\usepackage{amsmath}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
@@ -80,17 +40,13 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
-%\newtheorem{thm}{Theorem}[section] 
-%\newtheorem{defn}[thm]{Definition}
-%\newtheorem{algorithm}{Algorithm}[section]
-%\newtheorem{cor}{Corollary}
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 
-%\bibliographystyle{ieeetr}
+
 \begin{document}
 %
 
@@ -185,8 +141,8 @@ EE23BTECH11218
 
 \bigskip
 
-\renewcommand{\thefigure}{\theenumi}
-\renewcommand{\thetable}{\theenumi}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
 %\renewcommand{\theequation}{\theenumi}
 
 %\begin{abstract}
@@ -223,14 +179,19 @@ connected to a 110V, 60Hz supply.\\
 (a) What is the maximum current in the circuit?\\
 (b) What is the time lag between the current maximum and the voltage maximum?\\
 \section{Solution}
-\begin{circuitikz}
-\draw (0,0) to[sV, v=$110\,\text{V}$, f=$60\, \text{Hz}$](0,2)
-    to[R, l=$R$, v=$40\,\Omega$] (2,2)
-    to[C, l=$C$, v=$100\,\mu\text{F}$] (4,2)
-    -- (4,0)
-    -- (0,0) ;
-
-\end{circuitikz}
+\begin{table}[!h]
+	\centering
+	\input{tables/table1}
+	\vspace{6 pt}
+	\caption{Given Parameters}
+	\label{tab:enter-label}
+\end{table}
+\begin{figure}[!h]
+	\centering
+	\input{figs/fig1}
+	\caption{RC Circuit}
+	\label{fig:1}
+\end{figure}
 \begin{flushleft}
 Capacitance of the capacitor:
 \end{flushleft}
@@ -269,16 +230,13 @@ Maximum current is given as:
 \end{align}
 From \eqref{eq:tri-pts/7}, \eqref{eq:tri-pts/8}\\
 \begin{align}
-	\label{eq:tri-pts/9}I_0 &=\frac{V_0}{\sqrt{R^2 + \frac{1}{\omega^2C^2}}}
+	\label{eq:tri-pts/9}\implies I_0 &=\dfrac{V_0}{\sqrt{R^2 + \dfrac{1}{\omega^2C^2}}}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/10}I_0 &=\frac{V_0}{\sqrt{40^2 + \frac{1}{{(120\pi)^2 \times (10^{-4})^2}}}}
+	\label{eq:tri-pts/10}\implies I_0 &=\dfrac{V_0}{\sqrt{40^2 + \dfrac{1}{{(120\pi)^2 \times (10^{-4})^2}}}}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/11}I_0 &=\frac{100\sqrt{2}}{\sqrt{1600+\frac{10^8}{(120\pi)^2}}}
-\end{align}
-\begin{align}
-	\label{eq:tri-pts/12}I_0 &=3.24
+	\label{eq:tri-pts/12}\implies I_0 &=3.24
 \end{align}
 \\
 
@@ -286,22 +244,22 @@ From \eqref{eq:tri-pts/7}, \eqref{eq:tri-pts/8}\\
 :\\
 \end{flushleft}
 \begin{align}
-	\label{eq:tri-pts/13} tan\phi=\frac{1}{\omega CR}
+	\label{eq:tri-pts/13} tan\phi=\dfrac{1}{\omega CR}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/14}tan\phi=\frac{1}{120\pi \times 10^{-4} \times 40}
+	\label{eq:tri-pts/14}\implies tan\phi=\dfrac{1}{120\pi \times 10^{-4} \times 40}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/15} \phi = tan^{-1} (0.6635)=33.56\deg =\frac{33.56\pi}{180}rad
+	\label{eq:tri-pts/15}\implies \phi =\dfrac{33.56\pi}{180}rad
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/16} \therefore Time\: lag &=\frac{\phi}{\omega}
+	\label{eq:tri-pts/16} \therefore Time\: lag &=\dfrac{\phi}{\omega}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/17}Time\: lag &=\frac{33.56\pi}{180 \times 120\pi}
+	\label{eq:tri-pts/17}\implies Time\: lag &=\frac{33.56\pi}{180 \times 120\pi}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/18}Time\: lag &=1.55 \times 10^{-3}s=1.55ms
+	\label{eq:tri-pts/18}\implies Time\: lag &=1.55ms
 \end{align}
 
 Hence,the time lag between maximum current and maximum voltage is $1.55ms$.
