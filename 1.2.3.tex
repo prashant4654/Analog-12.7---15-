@@ -236,7 +236,7 @@ From \eqref{eq:tri-pts/7}, \eqref{eq:tri-pts/8}\\
 	\label{eq:tri-pts/10}\implies I_0 &=\dfrac{V_0}{\sqrt{40^2 + \dfrac{1}{{(120\pi)^2 \times (10^{-4})^2}}}}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/12}\implies I_0 &=3.24
+	\label{eq:tri-pts/11}\implies I_0 &=3.24
 \end{align}
 \\
 
@@ -244,24 +244,72 @@ From \eqref{eq:tri-pts/7}, \eqref{eq:tri-pts/8}\\
 :\\
 \end{flushleft}
 \begin{align}
-	\label{eq:tri-pts/13} tan\phi=\dfrac{1}{\omega CR}
+	\label{eq:tri-pts/12} tan\phi=\dfrac{1}{\omega CR}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/14}\implies tan\phi=\dfrac{1}{120\pi \times 10^{-4} \times 40}
+	\label{eq:tri-pts/13}\implies tan\phi=\dfrac{1}{120\pi \times 10^{-4} \times 40}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/15}\implies \phi =\dfrac{33.56\pi}{180}rad
+	\label{eq:tri-pts/14}\implies \phi =\dfrac{33.56\pi}{180}rad
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/16} \therefore Time\: lag &=\dfrac{\phi}{\omega}
+	\label{eq:tri-pts/15} \therefore Time\: lag   &=\dfrac{\phi}{\omega}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/17}\implies Time\: lag &=\frac{33.56\pi}{180 \times 120\pi}
+	\label{eq:tri-pts/16}\implies Time\: lag &= \frac{33.56\pi}{180 \times 120\pi}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/18}\implies Time\: lag &=1.55ms
+	\label{eq:tri-pts/17}\implies Time\: lag &= 1.55ms
 \end{align}
 
-Hence,the time lag between maximum current and maximum voltage is $1.55ms$.
+Hence,the time lag between maximum current and maximum voltage is $1.55ms$.\\
+\linebreak 
+\textbf{(c)}Transfer Function is defined as:
+\begin{align}
+\label{eq:tri-pts/18} H(s)=\dfrac{V(s)}{I(s)}
+\end{align}
+From \eqref{eq:tri-pts/18}\\
+\begin{align}
+\label{eq:tri-pts/19}
+  H(s)&=R+\dfrac{1}{sC}\\
+\label{eq:tri-pts/20}\implies H(j \omega)
+&=R+\dfrac{1}{j \omega C}\\
+\label{eq:tri-pts/21}\implies |H(j \omega)| &= \sqrt{R^2 + \dfrac{1}{\omega^2 C^2}}\\
+\label{eq:tri-pts/22}\implies |H(j \omega)|&=\sqrt{40^2 + \dfrac{1}{{(120\pi)^2 \times (10^{-4})^2}}}\\
+\label{eq:tri-pts/23}\implies |H(s)|&=48
+\end{align}
+\begin{align}
+\label{eq:tri-pts/24} \therefore I(s)&=\dfrac{V(s)}{H(s)}\\
+\label{eq:tri-pts/25}
+\implies I(s)&=\dfrac{110}{48}\\
+\label{eq:tri-pts/26}
+\implies I(s)&=2.29
+\end{align}
 
+\vspace{10cm}
+
+\begin{figure}[!h]
+	\centering
+	\input{figs/fig2}
+	\caption{RC Circuit}
+	\label{fig:2}
+\end{figure}
+
+\textbf{(d)}Plot of Impedance vs Angular Frequency
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig3.png}
+    \caption{Impedance vs $\omega$}
+    \label{fig:h_plot}
+\end{figure}
+
+\textbf{(e)}Plot of Current vs Angular Frequency
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig4.png}
+    \caption{Current vs $\omega$}
+    \label{fig:h_plot}
+\end{figure}
 \end{document}
