@@ -1,4 +1,4 @@
-% \iffalse
+%\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -192,26 +192,32 @@ connected to a 110V, 60Hz supply.\\
 	\caption{RC Circuit}
 	\label{fig:1}
 \end{figure}
-\begin{flushleft}
-Capacitance of the capacitor:
-\end{flushleft}
+\vspace{2cm}
+\begin{figure}[!h]
+	\centering
+	\input{figs/fig2}
+	\caption{RC Circuit}
+	\label{fig:2}
+\end{figure}
 \begin{align}
-\label{eq:tri-pts/1}C=100\mu F =100 \times 10^{-6}
+\label{eq:tri-pts/19}
+  H(s)&=R+\dfrac{1}{sC}\\
+\label{eq:tri-pts/20}\implies H(j \omega)
+&=R+\dfrac{1}{j \omega C}\\
+\label{eq:tri-pts/21}\implies |H(j \omega)| &= \sqrt{R^2 + \dfrac{1}{\omega^2 C^2}}\\
+\label{eq:tri-pts/22}\implies |H(j \omega)|&=\sqrt{40^2 + \dfrac{1}{{(120\pi)^2 \times (10^{-4})^2}}}\\
+\label{eq:tri-pts/23}\implies |H(s)|&=48
 \end{align}
-Resistance of the resistor:
+
 \begin{align}
-\label{eq:tri-pts/2}R=40\Omega
+\label{eq:tri-pts/24} \therefore I(s)&=\dfrac{V(s)}{H(s)}\\
+\label{eq:tri-pts/25}
+\implies I(s)&=\dfrac{110}{48}\\
+\label{eq:tri-pts/26}
+\implies I(s)&=2.29
 \end{align}
-Supply voltage:
-\begin{align}
-\label{eq:tri-pts/3}V=110V
-\end{align}
-\begin{flushleft}
-\textbf{(a)} Frequency of oscillations:
-\end{flushleft}
-\begin{align}
-\label{eq:tri-pts/4}v=60Hz
-\end{align}
+
+\textbf{(a)} 
 Angular frequency:
 \begin{align}
 \label{eq:tri-pts/5} \omega =2\Pi v =2\pi \times 60
@@ -220,18 +226,24 @@ Peak voltage:
 \begin{align}
 \label{eq:tri-pts/6}V_0=V\sqrt{2}=110\sqrt{2}V
 \end{align}
-For an RC circuit,we have the relation for impedance as:
+Current is given as: 
 \begin{align}
-	\label{eq:tri-pts/7} Z=R^2 + \dfrac{1}{\omega^2C^2}
+	\label{eq:tri-pts/9} I_0 &=\dfrac{V_0}{\sqrt{R^2 + \dfrac{1}{\omega^2C^2}}}
 \end{align}
-Maximum current is given as:
+For maximum current 
 \begin{align}
-\label{eq:tri-pts/8}I_0=\dfrac{V_0}{Z}
+	\label{eq:tri-pts/27} \dfrac{dI_0}{d\omega}&=0\\
+	\implies \dfrac{V_0}{ \omega^3 c^2 \sqrt{R^2 + \dfrac{1}{(\omega^2c^2)^3}}}&=0\\
+\implies \omega&=\infty
 \end{align}
-From \eqref{eq:tri-pts/7}, \eqref{eq:tri-pts/8}\\
-\begin{align}
-	\label{eq:tri-pts/9}\implies I_0 &=\dfrac{V_0}{\sqrt{R^2 + \dfrac{1}{\omega^2C^2}}}
-\end{align}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig4.png}
+    \caption{Current vs $\omega$}
+    \label{fig:h_plot}
+\end{figure}
+
+Maximum current at $\omega$ =$120\pi$ :
 \begin{align}
 	\label{eq:tri-pts/10}\implies I_0 &=\dfrac{V_0}{\sqrt{40^2 + \dfrac{1}{{(120\pi)^2 \times (10^{-4})^2}}}}
 \end{align}
@@ -239,13 +251,13 @@ From \eqref{eq:tri-pts/7}, \eqref{eq:tri-pts/8}\\
 	\label{eq:tri-pts/11}\implies I_0 &=3.24
 \end{align}
 \\
-
-\begin{flushleft}\textbf{(b)} In a capacitor circuit,the voltage lags behind the current by a phase angle of $\phi$ . This angle is given by the relation
-:\\
+\begin{flushleft}\textbf{(b)} In a capacitor circuit,the voltage lags behind the current by a phase angle of $\phi$ .\\
+This angle is given by the relation:\\
 \end{flushleft}
 \begin{align}
 	\label{eq:tri-pts/12} tan\phi=\dfrac{1}{\omega CR}
 \end{align}
+
 \begin{align}
 	\label{eq:tri-pts/13}\implies tan\phi=\dfrac{1}{120\pi \times 10^{-4} \times 40}
 \end{align}
@@ -258,58 +270,27 @@ From \eqref{eq:tri-pts/7}, \eqref{eq:tri-pts/8}\\
 \begin{align}
 	\label{eq:tri-pts/16}\implies Time\: lag &= \frac{33.56\pi}{180 \times 120\pi}
 \end{align}
+
 \begin{align}
 	\label{eq:tri-pts/17}\implies Time\: lag &= 1.55ms
 \end{align}
 
 Hence,the time lag between maximum current and maximum voltage is $1.55ms$.\\
-\linebreak 
-\textbf{(c)}Transfer Function is defined as:
-\begin{align}
-\label{eq:tri-pts/18} H(s)=\dfrac{V(s)}{I(s)}
-\end{align}
-From \eqref{eq:tri-pts/18}\\
-\begin{align}
-\label{eq:tri-pts/19}
-  H(s)&=R+\dfrac{1}{sC}\\
-\label{eq:tri-pts/20}\implies H(j \omega)
-&=R+\dfrac{1}{j \omega C}\\
-\label{eq:tri-pts/21}\implies |H(j \omega)| &= \sqrt{R^2 + \dfrac{1}{\omega^2 C^2}}\\
-\label{eq:tri-pts/22}\implies |H(j \omega)|&=\sqrt{40^2 + \dfrac{1}{{(120\pi)^2 \times (10^{-4})^2}}}\\
-\label{eq:tri-pts/23}\implies |H(s)|&=48
-\end{align}
-\begin{align}
-\label{eq:tri-pts/24} \therefore I(s)&=\dfrac{V(s)}{H(s)}\\
-\label{eq:tri-pts/25}
-\implies I(s)&=\dfrac{110}{48}\\
-\label{eq:tri-pts/26}
-\implies I(s)&=2.29
-\end{align}
 
-\vspace{10cm}
+\vspace{0.5cm}
 
-\begin{figure}[!h]
-	\centering
-	\input{figs/fig2}
-	\caption{RC Circuit}
-	\label{fig:2}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig5.png}
+    \caption{$I_0$ vs $V_0$}
+    \label{fig:h_plot}
 \end{figure}
 
-\textbf{(d)}Plot of Impedance vs Angular Frequency
-
+\textbf{(c)} Plot of Impedance vs Angular Frequency
 \begin{figure}[h]
     \centering
     \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig3.png}
     \caption{Impedance vs $\omega$}
-    \label{fig:h_plot}
-\end{figure}
-
-\textbf{(e)}Plot of Current vs Angular Frequency
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig4.png}
-    \caption{Current vs $\omega$}
     \label{fig:h_plot}
 \end{figure}
 \end{document}
