@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.5)  23 FEB 2024 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.5)  12 FEB 2024 14:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**1.2.3.tex
-(./1.2.3.tex
+**"Ques Analog.tex"
+(./Ques Analog.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
@@ -1272,20 +1272,15 @@ LaTeX Font Info:    Trying to load font information for OT1+txr on input line 5
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-) (./1.2.3.aux
-
-LaTeX Warning: Label `fig:h_plot' multiply defined.
-
-
-LaTeX Warning: Label `fig:h_plot' multiply defined.
-
 )
-\openout1 = `1.2.3.aux'.
+(./Ques Analog.aux)
+\openout1 = `"Ques Analog.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 50.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 50.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/omltxmi.fd
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 50.
@@ -1397,9 +1392,9 @@ Package gensymb Info: Using \textohm for \ohm on input line 50.
 Package gensymb Info: Using \textmu for \micro on input line 50.
 Package hyperref Info: Link coloring OFF on input line 50.
 
-(./1.2.3.out) (./1.2.3.out)
+(./Ques Analog.out) (./Ques Analog.out)
 \@outlinefile=\write5
-\openout5 = `1.2.3.out'.
+\openout5 = `"Ques Analog.out"'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
@@ -1438,69 +1433,36 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 1
 (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 10000) in paragraph at lines 176--181
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
-
-(./tables/table1.tex) (./figs/fig1.tex) (./figs/fig2.tex)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
 ocal/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
-]
-<figs/fig4.png, id=34, 578.16pt x 433.62pt>
-File: figs/fig4.png Graphic file (type png)
-<use figs/fig4.png>
-Package pdftex.def Info: figs/fig4.png  used on input line 239.
-(pdftex.def)             Requested size: 173.4405pt x 115.62994pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
-
- []
-
-<figs/fig5.png, id=36, 462.528pt x 346.896pt>
-File: figs/fig5.png Graphic file (type png)
-<use figs/fig5.png>
-Package pdftex.def Info: figs/fig5.png  used on input line 270.
-(pdftex.def)             Requested size: 173.44757pt x 115.62994pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figs/fig3.png, id=37, 578.16pt x 433.62pt>
-File: figs/fig3.png Graphic file (type png)
-<use figs/fig3.png>
-Package pdftex.def Info: figs/fig3.png  used on input line 278.
-(pdftex.def)             Requested size: 173.4405pt x 115.62994pt.
-[2 <./figs/fig4.png> <./figs/fig5.png> <./figs/fig3.png>] (./1.2.3.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `1.2.3.out' has not changed.
+] (./Ques Analog.aux)
+Package rerunfilecheck Info: File `"Ques Analog".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 48067 strings out of 476025
- 1123090 string characters out of 5790018
- 1898388 words of memory out of 5000000
- 67750 multiletter control sequences out of 15000+600000
- 579622 words of font info for 171 fonts, out of 8000000 for 9000
+ 47418 strings out of 476025
+ 1106269 string characters out of 5790018
+ 1854388 words of memory out of 5000000
+ 67151 multiletter control sequences out of 15000+600000
+ 568160 words of font info for 143 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,18n,96p,1173b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,6n,96p,1181b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/local/texlive/2023/texmf-
-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts
-/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw
-/times/utmri8a.pfb>
-Output written on 1.2.3.pdf (2 pages, 143549 bytes).
+/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2
+023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "Ques Analog.pdf" (1 page, 35454 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
- 31 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 44 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
