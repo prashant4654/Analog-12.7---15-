@@ -200,83 +200,58 @@ connected to a 110V, 60Hz supply.\\
 	\caption{RC Circuit}
 	\label{fig:2}
 \end{figure}
+\begin{enumerate} [label = (\alph*)]
+\item $V_{out }$ across capacitor,
 \begin{align}
-\label{eq:tri-pts/19}
-  H\brak{s}=&R+\dfrac{1}{sC}\\
-\label{eq:tri-pts/20}\implies H\brak{j\omega}
-=&R+\dfrac{1}{j \omega C}\\
-\label{eq:tri-pts/21}=& \sqrt{R^2 + \dfrac{1}{\omega^2 C^2}}\\
-\label{eq:tri-pts/22}=&\sqrt{40^2 + \dfrac{1}{{\brak{120\pi}^2 \times \brak{10^{-4}}^2}}}\\
-\label{eq:tri-pts/23}=&48
+ V_{out}=\dfrac{\dfrac{1}{sC}}{ R + \dfrac{1}{sC}}
+ V_{in}
+\end{align}
+\begin{align}
+\dfrac{V_{out}}{V_{in}} =& H\brak{s}\\
+\implies H\brak{s} =& \dfrac{1}{1+sRC}\\
+                    =& \dfrac{1}{\sqrt{1+\brak{\omega RC}^2}}e^{-tan^{-1}\dfrac{1}{\brak{\omega RC}}}
+\end{align}
+On taking fourier transform of $H\brak{s}$ ,
+\begin{align}
+V_{out} =& \dfrac{110}{\sqrt{1+\brak{\omega RC}^2}}cos\brak{\omega t - tan^{-1}\dfrac{1}{\brak{\omega RC}}}
+\end{align}
+For current across circuit,
+
+\begin{align} 
+\implies I=& C\dfrac{dV_{out}}{dt} \\ 
+         =& \dfrac{110\omega C}{\sqrt{1+\brak{\omega RC}^2}} sin\brak{\omega t - tan^{-1}\brak{\omega RC}}
 \end{align}
 
-\begin{align}
-\label{eq:tri-pts/24} \therefore I\brak{s}=&\dfrac{V\brak{s}}{H\brak{s}}\\
-\label{eq:tri-pts/25}
-=&\dfrac{110}{48}\\
-\label{eq:tri-pts/26}
-=&2.29
-\end{align}
-
-\textbf{(a)} 
-Angular frequency:
-\begin{align}
-\label{eq:tri-pts/5} \omega =&2\Pi v =2\pi \times 60
-\end{align}
-Current is given as: 
-\begin{align}
-	\label{eq:tri-pts/9} \implies I =&\dfrac{V}{\sqrt{R^2 + \dfrac{1}{\omega^2C^2}}}\\
-	\label{eq:tri-pts/1}=&\dfrac{110}{\sqrt{1600 + \dfrac{10^8}	{\omega^2}}}
-\end{align}
-For maximum current 
-\begin{align}
-	\label{eq:tri-pts/27} \dfrac{dI_0}{d\omega}=&0\\
-	\implies \dfrac{V_0}{ \omega^3 c^2 \sqrt{R^2 + \dfrac{1}{\brak{\omega^2c^2}^3}}}=&0\\
-\omega=&\infty
-\end{align}
 \begin{figure}[h]
     \centering
     \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig4.png}
     \caption{Current vs $\omega$}
     \label{fig:h_plot}
 \end{figure}
-
-Maximum current at $\omega$ = $120\pi$ :
+Maximum current in the circuit ,
 \begin{align}
-	\label{eq:tri-pts/10}\implies I_0 =&\dfrac{V_0}{\sqrt{40^2 + \dfrac{1}{{\brak{120\pi}^2 \times \brak{10^{-4}}^2}}}}\\
-	        =&3.24
+    \implies I_0 =&  \dfrac{110\omega C}{\sqrt{1+\brak{\omega RC}^2}} \\
+  =&3.24 \: A
 \end{align}
-\\
-\begin{flushleft}\textbf{(b)} In a capacitor circuit,the voltage lags behind the current by a phase angle of $\phi$ .\\
-This angle is given by the relation:\\
-\end{flushleft}
+\item In a capacitor circuit,the voltage lags behind the current by a phase angle of $\phi$ .\\
 \begin{align}
-	\label{eq:tri-pts/12} tan\phi=&\dfrac{1}{\omega CR}\\
-                                 =&\dfrac{1}{120\pi \times 10^{-4} \times 40}
+\implies \phi =& tan^{-1}\dfrac{1}{\brak{\omega RC}}\\
+     =& \frac{33.56\pi}{180 \times 120\pi}
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/14}\implies \phi =&\dfrac{33.56\pi}{180}rad
+	 \phi =&\dfrac{33.56\pi}{180}rad
 \end{align}
 \begin{align}
-	\label{eq:tri-pts/15} \therefore Time\: lag   =&\dfrac{\phi}{\omega}\\
+	 \implies Time\: lag   =&\dfrac{\phi}{\omega}\\
 								=& \frac{33.56\pi}{180 \times 120\pi}\\
 								=& 1.55ms
 \end{align}
-
-\vspace{2cm}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig5.png}
-    \caption{$I_0$ vs $V_0$}
-    \label{fig:h_plot}
-\end{figure}
-
-\textbf{(c)} Plot of Impedance vs Angular Frequency
+\item Plot of Impedance vs Angular Frequency
 \begin{figure}[h]
     \centering
     \includegraphics[width = 2.4 in, height = 1.6 in]{figs/fig3.png}
     \caption{Impedance vs $\omega$}
     \label{fig:h_plot}
 \end{figure}
+\end{enumerate}
 \end{document}
